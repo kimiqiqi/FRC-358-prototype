@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Calendar, Users, Wrench, Code, HeartHandshake, Award } from 'lucide-react';
 import { motion } from 'motion/react';
+import { siteConfig } from '../config/site';
 
 export default function Home() {
   return (
@@ -40,7 +41,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                 <Link to="/join" className="btn-primary w-full sm:w-auto">
-                  Join Team 358
+                  Join Team {siteConfig.teamNumber}
                 </Link>
                 <Link to="/donate" className="btn-secondary w-full sm:w-auto">
                   Support Our Mission
@@ -87,7 +88,7 @@ export default function Home() {
       {/* 3. Quick Credibility Strip */}
       <section className="border-y border-[var(--border-subtle)] bg-[var(--bg-secondary)] py-12">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-[var(--border-subtle)]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 text-center sm:divide-x divide-[var(--border-subtle)]">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">25+</p>
               <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Years Active</p>

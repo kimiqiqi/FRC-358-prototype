@@ -1,5 +1,6 @@
 import { Heart, Wrench, Plane, Cpu, Mail, CreditCard } from 'lucide-react';
 import { motion } from 'motion/react';
+import { siteConfig } from '../config/site';
 
 export default function Donate() {
   return (
@@ -48,12 +49,11 @@ export default function Donate() {
               <div className="text-[var(--accent)] mt-1"><Mail size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Mail a Check</h3>
-                <p className="text-sm text-[var(--text-secondary)] mb-4">Please make checks payable to <strong>Hauppauge Robotics</strong> and mail them to:</p>
-                <div className="bg-[var(--bg-secondary)] p-4 rounded font-mono text-sm text-[var(--text-primary)] border border-[var(--border-subtle)]">
-                  Hauppauge High School<br />
-                  Attn: Robotics Team 358<br />
-                  500 Lincoln Blvd<br />
-                  Hauppauge, NY 11788
+                <p className="text-sm text-[var(--text-secondary)] mb-4">Please make checks payable to <strong>{siteConfig.schoolName} Robotics</strong> and mail them to:</p>
+                <div className="bg-[var(--bg-secondary)] p-4 rounded font-mono text-sm text-[var(--text-primary)] border border-[var(--border-subtle)] whitespace-pre-line">
+                  {siteConfig.schoolName}{'\n'}
+                  Attn: Robotics Team {siteConfig.teamNumber}{'\n'}
+                  {siteConfig.schoolAddress.split(', ').join('\n')}
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
-//... existing imports
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Wrench, Code, Camera, Megaphone, ArrowRight } from 'lucide-react';
+import { siteConfig } from '../config/site';
 
 const faqs = [
   {
@@ -70,10 +70,22 @@ export default function Join() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center max-w-3xl mx-auto mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">Join the Team</h1>
+        <div className="inline-flex items-center gap-2 bg-[var(--accent)]/10 text-[var(--accent)] px-4 py-2 rounded-full font-bold text-sm tracking-wide mb-6">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent)]"></span>
+          </span>
+          NO EXPERIENCE REQUIRED
+        </div>
+        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">Start Your Engineering Journey</h1>
         <p className="text-lg text-[var(--text-secondary)]">
-          No prior experience is required. We will teach you everything you need to know. Whether you want to build robots, write code, or run a business, there's a place for you on Team 358.
+          You don't need to be an expert to join. We teach you everything you need to know. Whether you want to build robots, write code, or run a business, there's a place for you on The Robotic Eagles.
         </p>
+        <div className="mt-8">
+          <a href={siteConfig.formLinks.joinInterest} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            Apply for the 2026 Season <ArrowRight size={20} className="ml-2" />
+          </a>
+        </div>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
@@ -108,7 +120,7 @@ export default function Join() {
             </li>
           </ol>
           <div className="mt-12 text-center">
-            <a href="#" className="btn-primary w-full justify-center">
+            <a href={siteConfig.formLinks.joinInterest} target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center">
               Fill Out Interest Form <ArrowRight size={20} className="ml-2" />
             </a>
           </div>
@@ -121,31 +133,31 @@ export default function Join() {
         >
           <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-8">Find Your Role</h2>
           <div className="space-y-4">
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl hover:border-[var(--accent)] transition-colors">
+            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Wrench size={24} /></div>
               <div>
-                <h3 className="font-bold text-lg mb-1">Mechanical & CAD</h3>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Mechanical & CAD</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Design robot parts using SolidWorks, operate CNC machines, and assemble the final robot.</p>
               </div>
             </div>
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl hover:border-[var(--accent)] transition-colors">
+            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Code size={24} /></div>
               <div>
-                <h3 className="font-bold text-lg mb-1">Software & Electrical</h3>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Software & Electrical</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Write Java code for robot control, implement computer vision, and wire the electrical board.</p>
               </div>
             </div>
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl hover:border-[var(--accent)] transition-colors">
+            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Megaphone size={24} /></div>
               <div>
-                <h3 className="font-bold text-lg mb-1">Business & Strategy</h3>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Business & Strategy</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Manage team finances, write business plans, pitch to sponsors, and analyze match data.</p>
               </div>
             </div>
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl hover:border-[var(--accent)] transition-colors">
+            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Camera size={24} /></div>
               <div>
-                <h3 className="font-bold text-lg mb-1">Media & Marketing</h3>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Media & Marketing</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Take photos/videos, manage social media, design team apparel, and maintain the website.</p>
               </div>
             </div>
@@ -161,7 +173,7 @@ export default function Join() {
         className="max-w-3xl mx-auto"
       >
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-display font-bold mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-display font-medium mb-4 text-[var(--text-primary)]">Frequently Asked Questions</h2>
           <p className="text-[var(--text-secondary)]">Everything you need to know about joining Team 358.</p>
         </div>
         <div className="space-y-4">

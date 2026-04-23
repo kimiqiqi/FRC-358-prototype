@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Target, Users, Zap, Trophy, Award, Flag, Star } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { Target, Users, Zap, Trophy } from 'lucide-react';
+import { motion } from 'motion/react';
+import { teamHistory } from '../data/history';
 
 export default function About() {
   return (
@@ -10,9 +11,9 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center max-w-3xl mx-auto mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">About Team 358</h1>
+        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">About The Robotic Eagles</h1>
         <p className="text-lg text-[var(--text-secondary)]">
-          We are the Hauppauge Robotic Eagles, a FIRST Robotics Competition team dedicated to inspiring students in science, technology, engineering, and mathematics.
+          We are Hauppauge High School's FIRST Robotics Competition Team 358. We don't just build robots—we build the next generation of engineers, creators, and leaders.
         </p>
       </motion.div>
 
@@ -21,25 +22,26 @@ export default function About() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow p-8 md:p-12"
         >
           <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-6">Our Mission</h2>
-          <p className="text-[var(--text-secondary)] mb-4 leading-relaxed">
-            Our mission is to inspire young people to be science and technology leaders and innovators, by engaging them in exciting mentor-based programs that build science, engineering, and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership.
+          <p className="text-[var(--text-secondary)] mb-6 leading-relaxed text-lg">
+            Our mission is to empower Hauppauge students to become science and technology leaders. By exposing them to rigorous mentor-based programs, we build not just structural engineering and coding skills, but the resilience to solve impossible problems.
           </p>
-          <p className="text-[var(--text-secondary)] leading-relaxed">
-            We strive to create an inclusive environment where every student, regardless of their prior experience, can find a role and develop skills that will serve them in their future careers.
+          <p className="text-[var(--text-secondary)] leading-relaxed text-lg">
+            We are a student-driven organization. We believe that hands-on experience failing, iterating, and succeeding under a 6-week deadline produces well-rounded students equipped with unparalleled self-confidence and communication capabilities.
           </p>
         </motion.div>
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl p-8 flex flex-col justify-center polaroid-shadow"
+          className="bg-[#041E42] text-white border border-[var(--border-subtle)] rounded-2xl p-8 md:p-12 flex flex-col justify-center polaroid-shadow"
         >
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <Zap className="text-[var(--accent)]" /> What is FIRST?
+          <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <Zap className="text-white" /> What is FIRST?
           </h3>
-          <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+          <p className="text-slate-300 leading-relaxed text-lg">
             FIRST (For Inspiration and Recognition of Science and Technology) is a global nonprofit organization that operates after-school robotics programs for young people. The FIRST Robotics Competition (FRC) challenges high school students to build industrial-size robots to play a difficult field game in alliance with other teams, while also raising funds, designing a team "brand," and advancing respect and appreciation for STEM within the local community.
           </p>
         </motion.div>
@@ -80,7 +82,7 @@ export default function About() {
       {/* History Timeline Component */}
       <div className="mb-24">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-display font-bold mb-4 text-[var(--text-primary)]">Our History & Legacy</h2>
+          <h2 className="text-3xl font-display font-medium mb-4 text-[var(--text-primary)]">Our History & Legacy</h2>
           <p className="text-lg text-[var(--text-secondary)]">
             For over two decades, the Robotic Eagles have been soaring to new heights. Here are some of our proudest moments.
           </p>
@@ -93,149 +95,38 @@ export default function About() {
           {/* Timeline Items */}
           <div className="space-y-12">
             
-            {/* Item 1 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative flex flex-col md:flex-row items-center justify-between group"
-            >
-              <div className="hidden md:block w-5/12 text-right pr-8">
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">Team Founded</h3>
-                <p className="text-[var(--text-secondary)] mt-2">Hauppauge High School establishes Team 358 to bring hands-on engineering to students.</p>
-              </div>
-              <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-[var(--bg-primary)] border-4 border-[var(--accent)] rounded-full -translate-x-1/2 flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                <Flag className="text-[var(--accent)]" size={16} />
-              </div>
-              <div className="w-full md:w-5/12 pl-12 md:pl-8">
-                <div className="md:hidden mb-2">
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">Team Founded</h3>
-                  <p className="text-[var(--text-secondary)] mt-2">Hauppauge High School establishes Team 358 to bring hands-on engineering to students.</p>
-                </div>
-                <div className="text-4xl font-display tracking-widest text-[var(--text-primary)] opacity-20 font-bold">1999</div>
-              </div>
-            </motion.div>
-
-            {/* Item 2 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative flex flex-col md:flex-row items-center justify-between group md:flex-row-reverse"
-            >
-              <div className="hidden md:block w-5/12 text-left pl-8">
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">Rookie Year</h3>
-                <p className="text-[var(--text-secondary)] mt-2">Competed in our very first FIRST Robotics Competition, building the foundation of our long-standing programs.</p>
-              </div>
-              <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-[var(--bg-primary)] border-4 border-[var(--accent)] rounded-full -translate-x-1/2 flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                <Star className="text-[var(--accent)]" size={16} />
-              </div>
-              <div className="w-full md:w-5/12 pr-12 md:pr-8 text-left md:text-right pl-12 md:pl-0">
-                <div className="md:hidden mb-2">
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">Rookie Year</h3>
-                  <p className="text-[var(--text-secondary)] mt-2">Competed in our very first FIRST Robotics Competition, building the foundation of our long-standing programs.</p>
-                </div>
-                <div className="text-4xl font-display tracking-widest text-[var(--text-primary)] opacity-20 font-bold">2000</div>
-              </div>
-            </motion.div>
-
-            {/* Item 3 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative flex flex-col md:flex-row items-center justify-between group"
-            >
-              <div className="hidden md:block w-5/12 text-right pr-8">
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">Long Island Regional Champions</h3>
-                <p className="text-[var(--text-secondary)] mt-2">Captured the top regional title, proving the Robotic Eagles as a powerhouse in NY competitive robotics.</p>
-              </div>
-              <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-[var(--accent)] text-white border-4 border-[var(--bg-primary)] rounded-full -translate-x-1/2 flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                <Trophy size={16} />
-              </div>
-              <div className="w-full md:w-5/12 pl-12 md:pl-8">
-                <div className="md:hidden mb-2">
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">Long Island Regional Champions</h3>
-                  <p className="text-[var(--text-secondary)] mt-2">Captured the top regional title, proving the Robotic Eagles as a powerhouse in NY competitive robotics.</p>
-                </div>
-                <div className="text-4xl font-display tracking-widest text-[var(--accent)] font-bold opacity-80">2004</div>
-              </div>
-            </motion.div>
-
-            {/* Item 4 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative flex flex-col md:flex-row items-center justify-between group md:flex-row-reverse"
-            >
-              <div className="hidden md:block w-5/12 text-left pl-8">
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">Engineering Inspiration</h3>
-                <p className="text-[var(--text-secondary)] mt-2">Awarded the Engineering Inspiration Award for advancing respect and appreciation for engineering in our community.</p>
-              </div>
-              <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-[var(--bg-primary)] border-4 border-[var(--accent)] rounded-full -translate-x-1/2 flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                <Award className="text-[var(--accent)]" size={16} />
-              </div>
-              <div className="w-full md:w-5/12 pr-12 md:pr-8 text-left md:text-right pl-12 md:pl-0">
-                <div className="md:hidden mb-2">
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">Engineering Inspiration</h3>
-                  <p className="text-[var(--text-secondary)] mt-2">Awarded the Engineering Inspiration Award for advancing respect and appreciation for engineering in our community.</p>
-                </div>
-                <div className="text-4xl font-display tracking-widest text-[var(--text-primary)] opacity-20 font-bold">2007</div>
-              </div>
-            </motion.div>
-
-            {/* Item 5 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative flex flex-col md:flex-row items-center justify-between group"
-            >
-              <div className="hidden md:block w-5/12 text-right pr-8">
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">Multiple Regional Victories</h3>
-                <p className="text-[var(--text-secondary)] mt-2">Continued standard of excellence with Long Island Regional wins in 2011, 2014, and 2018.</p>
-              </div>
-              <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-[var(--accent)] text-white border-4 border-[var(--bg-primary)] rounded-full -translate-x-1/2 flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                <Trophy size={16} />
-              </div>
-              <div className="w-full md:w-5/12 pl-12 md:pl-8">
-                <div className="md:hidden mb-2">
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">Multiple Regional Victories</h3>
-                  <p className="text-[var(--text-secondary)] mt-2">Continued standard of excellence with Long Island Regional wins in 2011, 2014, and 2018.</p>
-                </div>
-                <div className="text-4xl font-display tracking-widest text-[var(--accent)] font-bold opacity-80">2010s</div>
-              </div>
-            </motion.div>
-            
-            {/* Item 6 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative flex flex-col md:flex-row items-center justify-between group md:flex-row-reverse"
-            >
-              <div className="hidden md:block w-5/12 text-left pl-8">
-                <h3 className="text-2xl font-bold text-[var(--text-primary)]">The Next Generation</h3>
-                <p className="text-[var(--text-secondary)] mt-2">Expanding community reach by creating youth robotics camps and establishing massive reference resources used by FRC teams globally (team358.org).</p>
-              </div>
-              <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-[var(--bg-primary)] border-4 border-[var(--accent)] rounded-full -translate-x-1/2 flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform">
-                <Users className="text-[var(--accent)]" size={16} />
-              </div>
-              <div className="w-full md:w-5/12 pr-12 md:pr-8 text-left md:text-right pl-12 md:pl-0">
-                <div className="md:hidden mb-2">
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)]">The Next Generation</h3>
-                  <p className="text-[var(--text-secondary)] mt-2">Expanding community reach by creating youth robotics camps and establishing massive reference resources used by FRC teams globally (team358.org).</p>
-                </div>
-                <div className="text-4xl font-display tracking-widest text-[var(--text-primary)] opacity-20 font-bold">Present</div>
-              </div>
-            </motion.div>
+            {teamHistory.map((item, index) => {
+              const isEven = index % 2 === 0;
+              const Icon = item.icon;
+              
+              return (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  className={`relative flex flex-col md:flex-row items-center justify-between group ${!isEven ? 'md:flex-row-reverse' : ''}`}
+                >
+                  <div className={`hidden md:block w-5/12 ${isEven ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                    <h3 className="text-2xl font-bold text-[var(--text-primary)]">{item.title}</h3>
+                    <p className="text-[var(--text-secondary)] mt-2">{item.description}</p>
+                  </div>
+                  <div className={`absolute left-4 md:left-1/2 w-10 h-10 border-4 rounded-full -translate-x-1/2 flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform ${item.highlight ? 'bg-[var(--accent)] text-white border-[var(--bg-primary)]' : 'bg-[var(--bg-primary)] text-[var(--accent)] border-[var(--accent)]'}`}>
+                    <Icon size={16} />
+                  </div>
+                  <div className={`w-full md:w-5/12 ${isEven ? 'pl-12 md:pl-8' : 'pr-12 md:pr-8 text-left md:text-right pl-12 md:pl-0'}`}>
+                    <div className="md:hidden mb-2">
+                      <h3 className="text-2xl font-bold text-[var(--text-primary)]">{item.title}</h3>
+                      <p className="text-[var(--text-secondary)] mt-2">{item.description}</p>
+                    </div>
+                    <div className={`text-4xl font-display tracking-widest font-bold ${item.highlight ? 'text-[var(--accent)] opacity-80' : 'text-[var(--text-primary)] opacity-20'}`}>
+                      {item.year}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
 
           </div>
         </div>

@@ -27,9 +27,9 @@ export default function Events() {
               <CalendarIcon className="text-[var(--accent)]" size={24} />
               <h2 className="text-2xl font-display font-medium text-[var(--text-primary)]">Upcoming Events</h2>
             </div>
-            <button className="text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider hover:text-[var(--accent)] transition-colors">
+            <a href="#" className="inline-block text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider hover:text-[var(--accent)] transition-colors">
               + Subscribe
-            </button>
+            </a>
           </div>
           
           {/* Google Calendar Embed Placeholder */}

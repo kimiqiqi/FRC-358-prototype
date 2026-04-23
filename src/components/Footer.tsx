@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Instagram, Github, Youtube } from 'lucide-react';
 
+import { siteConfig } from '../config/site';
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] pt-16 pb-8">
@@ -10,25 +12,25 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[var(--accent)] flex items-center justify-center text-white font-display font-bold text-xl">
-                358
+              <div className="w-10 h-10 rounded-lg bg-[var(--accent)] flex items-center justify-center text-[var(--bg-primary)] font-display font-bold text-xl">
+                {siteConfig.teamNumber}
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-lg leading-tight tracking-tight">Robotic Eagles</span>
-                <span className="text-xs font-mono text-[var(--text-secondary)] uppercase tracking-wider">FIRST Team 358</span>
+                <span className="font-display font-bold text-lg leading-tight tracking-tight">{siteConfig.teamName}</span>
+                <span className="text-xs font-mono text-[var(--text-secondary)] uppercase tracking-wider">FIRST Team {siteConfig.teamNumber}</span>
               </div>
             </Link>
             <p className="text-[var(--text-secondary)] text-sm max-w-xs">
               Inspiring the next generation of engineers, innovators, and leaders through FIRST Robotics Competition.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+              <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+              <a href={siteConfig.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
                 <Youtube size={20} />
               </a>
-              <a href="#" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+              <a href={siteConfig.socials.github} target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
                 <Github size={20} />
               </a>
             </div>
@@ -61,16 +63,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
                 <MapPin size={18} className="shrink-0 text-[var(--accent)] mt-0.5" />
-                <span>
-                  Hauppauge High School<br />
-                  500 Lincoln Blvd<br />
-                  Hauppauge, NY 11788
+                <span className="whitespace-pre-line">
+                  {siteConfig.schoolName}{'\n'}
+                  {siteConfig.schoolAddress.split(', ').join('\n')}
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm text-[var(--text-secondary)]">
                 <Mail size={18} className="shrink-0 text-[var(--accent)]" />
-                <a href="mailto:contact@roboticeagles358.org" className="hover:text-[var(--accent)] transition-colors">
-                  contact@roboticeagles358.org
+                <a href={`mailto:${siteConfig.contactEmail}`} className="hover:text-[var(--accent)] transition-colors">
+                  {siteConfig.contactEmail}
                 </a>
               </li>
             </ul>
@@ -80,10 +81,10 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-[var(--border-subtle)] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[var(--text-secondary)]">
-            &copy; {new Date().getFullYear()} Robotic Eagles Team 358. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.teamName} Team {siteConfig.teamNumber}. All rights reserved.
           </p>
           <p className="text-xs text-[var(--text-secondary)]">
-            Designed & Built by Team 358 Students
+            Designed & Built by Team {siteConfig.teamNumber} Students
           </p>
         </div>
       </div>

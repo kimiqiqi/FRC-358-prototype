@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronRight, Moon, Sun } from 'lucide-react';
 import clsx from 'clsx';
 
+import { siteConfig } from '../config/site';
+
 const navLinks = [
   { name: 'About', path: '/about' },
   { name: 'Season 2026', path: '/season' },
@@ -66,10 +68,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] font-display font-bold text-xl group-hover:bg-[var(--text-primary)] group-hover:text-[var(--bg-primary)] transition-colors">
-              358
+              {siteConfig.teamNumber}
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-2xl leading-none tracking-tight text-[var(--text-primary)]">Robotic Eagles</span>
+              <span className="font-display text-2xl leading-none tracking-tight text-[var(--text-primary)]">{siteConfig.teamName}</span>
             </div>
           </Link>
 

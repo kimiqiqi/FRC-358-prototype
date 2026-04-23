@@ -1,5 +1,6 @@
 import { Mail, MapPin, Send } from 'lucide-react';
 import { motion } from 'motion/react';
+import { siteConfig } from '../config/site';
 
 export default function Contact() {
   return (
@@ -34,8 +35,8 @@ export default function Contact() {
                 <div>
                   <h3 className="font-bold mb-1">Email</h3>
                   <p className="text-[var(--text-secondary)] mb-2">For general inquiries and sponsorship:</p>
-                  <a href="mailto:contact@roboticeagles358.org" className="text-[var(--accent)] hover:underline font-medium">
-                    contact@roboticeagles358.org
+                  <a href={`mailto:${siteConfig.contactEmail}`} className="text-[var(--accent)] hover:underline font-medium">
+                    {siteConfig.contactEmail}
                   </a>
                 </div>
               </div>
@@ -47,10 +48,9 @@ export default function Contact() {
                 <div>
                   <h3 className="font-bold mb-1">Location</h3>
                   <p className="text-[var(--text-secondary)] mb-2">Our shop is located at:</p>
-                  <address className="not-italic text-[var(--text-primary)] font-medium">
-                    Hauppauge High School<br />
-                    500 Lincoln Blvd<br />
-                    Hauppauge, NY 11788
+                  <address className="not-italic text-[var(--text-primary)] font-medium whitespace-pre-line">
+                    {siteConfig.schoolName}{'\n'}
+                    {siteConfig.schoolAddress.split(', ').join('\n')}
                   </address>
                 </div>
               </div>

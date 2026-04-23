@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from 'lucide-react';
 import { motion } from 'motion/react';
+import { siteConfig } from '../config/site';
 
 export default function Sponsors() {
   return (
@@ -114,7 +115,7 @@ export default function Sponsors() {
       >
         <h2 className="text-3xl font-display font-medium mb-4">Become a Corporate Partner</h2>
         <p className="text-[var(--bg-secondary)] max-w-2xl mx-auto mb-10 text-lg opacity-90">
-          Interested in supporting Team 358? We offer various sponsorship tiers with unique exposure opportunities at local events. Contact us for our complete sponsorship packet.
+          Interested in supporting Team {siteConfig.teamNumber}? We offer various sponsorship tiers with unique exposure opportunities at local events. Contact us for our complete sponsorship packet.
         </p>
         <Link to="/contact" className="btn-primary bg-[var(--bg-primary)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]">
           Request Sponsorship Packet <ArrowRight size={20} className="ml-2" />
