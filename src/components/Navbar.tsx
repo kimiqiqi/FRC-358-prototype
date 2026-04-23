@@ -97,13 +97,13 @@ export default function Navbar() {
               </button>
               <Link
                 to="/join"
-                className="bg-[var(--accent)] text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-[var(--accent-hover)] transition-colors inline-block"
+                className="btn-primary px-6 py-2.5 text-sm shadow-sm"
               >
                 Join Us
               </Link>
               <Link
                 to="/donate"
-                className="bg-[var(--text-primary)] text-[var(--bg-primary)] px-6 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity inline-block"
+                className="btn-outline px-6 py-2.5 text-sm"
               >
                 Donate
               </Link>
