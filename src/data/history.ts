@@ -9,37 +9,23 @@ export const teamHistory = [
     highlight: false
   },
   {
-    year: "2000",
-    title: "Rookie Year",
-    description: "Competed in our very first FIRST Robotics Competition, building the foundation of our long-standing programs.",
+    year: "Over the years",
+    title: "A Legacy of Innovation",
+    description: "[Placeholder: Team history, notable robots, or evolution of the program.]",
     icon: Star,
     highlight: false
   },
   {
-    year: "2004",
-    title: "Long Island Regional Champions",
-    description: "Captured the top regional title, proving the Robotic Eagles as a powerhouse in NY competitive robotics.",
-    icon: Trophy,
-    highlight: true
-  },
-  {
-    year: "2007",
-    title: "Engineering Inspiration",
-    description: "Awarded the Engineering Inspiration Award for advancing respect and appreciation for engineering in our community.",
-    icon: Award,
-    highlight: false
-  },
-  {
-    year: "2010s",
-    title: "Multiple Regional Victories",
-    description: "Continued standard of excellence with Long Island Regional wins in 2011, 2014, and 2018.",
+    year: "Notable Awards",
+    title: "Regional & Championship Success",
+    description: "[Placeholder: Regional wins, Chairman's/Impact awards, and other team accomplishments.]",
     icon: Trophy,
     highlight: true
   },
   {
     year: "Present",
     title: "The Next Generation",
-    description: "Expanding community reach by creating youth robotics camps and establishing massive reference resources used by FRC teams globally (team358.org).",
+    description: "Expanding community reach, educating the next class of engineers, and preparing for the upcoming season.",
     icon: Users,
     highlight: false
   }

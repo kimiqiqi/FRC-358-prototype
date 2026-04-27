@@ -33,17 +33,20 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="lg:col-span-5 max-w-2xl relative z-20"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-display font-medium text-[var(--text-primary)] leading-[1.05] tracking-tight mb-8">
+              <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-display font-medium text-[var(--text-primary)] leading-[1.05] tracking-tight mb-6">
                 Building robots.<br />
                 Writing code.<br />
                 Finding community.
               </h1>
+              <p className="text-xl md:text-2xl text-[var(--text-secondary)] mb-10 max-w-lg">
+                We are {siteConfig.schoolName}'s FIRST Robotics Competition Team {siteConfig.teamNumber}.
+              </p>
               
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                <Link to="/join" className="btn-primary w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <Link to="/join" className="btn-primary w-full sm:w-auto text-center justify-center text-lg py-4 sm:py-3 px-8">
                   Join Team {siteConfig.teamNumber}
                 </Link>
-                <Link to="/donate" className="btn-secondary w-full sm:w-auto">
+                <Link to="/donate" className="btn-outline w-full sm:w-auto text-center justify-center text-lg py-4 sm:py-3 px-8">
                   Support Our Mission
                 </Link>
               </div>
@@ -76,7 +79,7 @@ export default function Home() {
             </motion.div>
           </div>
           
-          {/* Scroll Down Squiggle (similar to image) */}
+          {/* Scroll Down Squiggle */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex justify-center w-full">
             <svg width="80" height="20" viewBox="0 0 80 20" className="text-[var(--accent)] opacity-50 mix-blend-multiply">
                <path d="M0,10 Q10,20 20,10 T40,10 T60,10 T80,10" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
@@ -88,7 +91,7 @@ export default function Home() {
       {/* 3. Quick Credibility Strip */}
       <section className="border-y border-[var(--border-subtle)] bg-[var(--bg-secondary)] py-12">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 text-center sm:divide-x divide-[var(--border-subtle)]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 text-center divide-x-0 md:divide-x divide-[var(--border-subtle)]">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">25+</p>
               <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Years Active</p>
@@ -119,22 +122,22 @@ export default function Home() {
                 Operating a FIRST Robotics team is like running a small technology startup. While we build a 125-pound industrial robot in six weeks, our success relies on a diverse set of creative, technical, and strategic skills from our student body.
               </p>
               <ul className="space-y-4 mb-10">
-                <li className="flex items-center gap-4 text-[var(--text-primary)] bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-4 rounded-xl hover:border-[var(--accent)] transition-colors">
-                  <div className="bg-[var(--accent)]/10 p-2 rounded-lg text-[var(--accent)]"><Wrench size={20} /></div>
-                  <span className="font-bold text-lg">Mechanical & Design (CAD)</span>
+                <li className="flex flex-col sm:flex-row sm:items-center gap-4 text-[var(--text-primary)] bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-5 rounded-xl hover:border-[var(--accent)] transition-colors polaroid-shadow shadow-sm">
+                  <div className="bg-[var(--accent)]/10 p-3 rounded-xl text-[var(--accent)] self-start sm:self-auto"><Wrench size={24} /></div>
+                  <span className="font-bold text-xl md:text-lg">Mechanical & Design (CAD)</span>
                 </li>
-                <li className="flex items-center gap-4 text-[var(--text-primary)] bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-4 rounded-xl hover:border-[var(--accent)] transition-colors">
-                  <div className="bg-[var(--accent)]/10 p-2 rounded-lg text-[var(--accent)]"><Code size={20} /></div>
-                  <span className="font-bold text-lg">Software, Vision & Electrical</span>
+                <li className="flex flex-col sm:flex-row sm:items-center gap-4 text-[var(--text-primary)] bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-5 rounded-xl hover:border-[var(--accent)] transition-colors polaroid-shadow shadow-sm">
+                  <div className="bg-[var(--accent)]/10 p-3 rounded-xl text-[var(--accent)] self-start sm:self-auto"><Code size={24} /></div>
+                  <span className="font-bold text-xl md:text-lg">Software, Vision & Electrical</span>
                 </li>
-                <li className="flex items-center gap-4 text-[var(--text-primary)] bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-4 rounded-xl hover:border-[var(--accent)] transition-colors">
-                  <div className="bg-[var(--accent)]/10 p-2 rounded-lg text-[var(--accent)]"><Users size={20} /></div>
-                  <span className="font-bold text-lg">Business, Media & Strategy</span>
+                <li className="flex flex-col sm:flex-row sm:items-center gap-4 text-[var(--text-primary)] bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-5 rounded-xl hover:border-[var(--accent)] transition-colors polaroid-shadow shadow-sm">
+                  <div className="bg-[var(--accent)]/10 p-3 rounded-xl text-[var(--accent)] self-start sm:self-auto"><Users size={24} /></div>
+                  <span className="font-bold text-xl md:text-lg">Business, Media & Strategy</span>
                 </li>
               </ul>
               <div className="mt-8">
-                <Link to="/join" className="btn-primary w-full sm:w-auto">
-                  Explore Available Roles <ArrowRight size={18} className="ml-2" />
+                <Link to="/join" className="btn-outline w-full sm:w-auto justify-center text-lg py-4 sm:py-3">
+                  Explore Available Roles <ArrowRight size={20} className="ml-2" />
                 </Link>
               </div>
             </motion.div>
@@ -162,9 +165,9 @@ export default function Home() {
                 <Award className="text-[var(--accent)]" size={32} />
                 <h2 className="text-4xl font-display font-medium text-[var(--text-primary)]">2026 Season</h2>
               </div>
-              <div className="aspect-video bg-[var(--bg-primary)] mb-8 flex items-center justify-center relative overflow-hidden polaroid-shadow">
+              <div className="aspect-video bg-[var(--bg-primary)] mb-8 flex items-center justify-center relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] polaroid-shadow">
                 <div className="absolute inset-0 bg-[var(--bg-primary)]"></div>
-                <div className="relative z-10 text-center p-6 border-2 border-dashed border-[var(--border-subtle)] m-4 flex-1 h-[calc(100%-2rem)] flex flex-col justify-center items-center">
+                <div className="relative z-10 text-center p-6 border-2 border-dashed border-[var(--border-subtle)] m-4 flex-1 h-[calc(100%-2rem)] flex flex-col justify-center items-center rounded-xl">
                   <p className="font-sans font-bold text-sm text-[var(--text-secondary)] uppercase tracking-widest mb-3">Game Reveal</p>
                   <p className="font-display font-medium text-3xl">Coming January 2026</p>
                 </div>
@@ -172,8 +175,8 @@ export default function Home() {
               <p className="text-[var(--text-secondary)] mb-6 text-lg">
                 We are currently in our offseason training period, preparing our new members with the skills they need for the upcoming build season.
               </p>
-              <Link to="/season" className="btn-outline">
-                View Season Details <ChevronRight size={18} className="ml-2" />
+              <Link to="/season" className="btn-outline w-full sm:w-auto justify-center text-lg py-4 sm:py-3">
+                View Season Details <ChevronRight size={20} className="ml-2" />
               </Link>
             </motion.div>
 
@@ -183,36 +186,36 @@ export default function Home() {
                 <Calendar className="text-[var(--accent)]" size={32} />
                 <h2 className="text-4xl font-display font-medium text-[var(--text-primary)]">Upcoming Events</h2>
               </div>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* Event Item 1 */}
-                <div className="flex gap-8 items-start group">
-                  <div className="flex flex-col items-center justify-center shrink-0 w-20 h-24 bg-[var(--text-primary)] text-[var(--bg-primary)] polaroid-shadow group-hover:-translate-y-1 transition-transform">
-                    <span className="text-xs font-bold uppercase tracking-wider mb-1 opacity-80">Oct</span>
-                    <span className="text-3xl font-display font-medium">15</span>
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start group bg-[var(--bg-primary)] p-6 rounded-2xl border border-[var(--border-subtle)] polaroid-shadow">
+                  <div className="flex flex-row sm:flex-col items-center justify-center shrink-0 w-full sm:w-24 h-auto sm:h-28 bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-xl py-3 sm:py-0 border border-[var(--border-subtle)] transition-colors">
+                    <span className="text-sm font-bold uppercase tracking-wider sm:mb-1 opacity-80 mr-2 sm:mr-0">TBD</span>
+                    <span className="text-3xl font-display font-medium">--</span>
                   </div>
-                  <div>
-                    <h4 className="font-display font-medium text-[var(--text-primary)] text-2xl mb-2">Fall Open House</h4>
-                    <p className="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-2">Hauppauge High School</p>
-                    <p className="text-[var(--text-secondary)]">Come meet the team and see our robots in action. Open to all interested students and parents.</p>
+                  <div className="flex-1">
+                    <h4 className="font-display font-medium text-[var(--text-primary)] text-2xl mb-1 sm:mb-2">[Event Name Pending]</h4>
+                    <p className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-2 sm:mb-3">[Location TBD]</p>
+                    <p className="text-[var(--text-secondary)] leading-relaxed">Details for this upcoming team event will be posted once the official schedule is confirmed.</p>
                   </div>
                 </div>
 
                 {/* Event Item 2 */}
-                <div className="flex gap-8 items-start group">
-                  <div className="flex flex-col items-center justify-center shrink-0 w-20 h-24 bg-[var(--text-primary)] text-[var(--bg-primary)] polaroid-shadow group-hover:-translate-y-1 transition-transform">
-                    <span className="text-xs font-bold uppercase tracking-wider mb-1 opacity-80">Nov</span>
-                    <span className="text-3xl font-display font-medium">02</span>
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start group bg-[var(--bg-primary)] p-6 rounded-2xl border border-[var(--border-subtle)] polaroid-shadow">
+                  <div className="flex flex-row sm:flex-col items-center justify-center shrink-0 w-full sm:w-24 h-auto sm:h-28 bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-xl py-3 sm:py-0 border border-[var(--border-subtle)] transition-colors">
+                    <span className="text-sm font-bold uppercase tracking-wider sm:mb-1 opacity-80 mr-2 sm:mr-0">TBD</span>
+                    <span className="text-3xl font-display font-medium">--</span>
                   </div>
-                  <div>
-                    <h4 className="font-display font-medium text-[var(--text-primary)] text-2xl mb-2">Offseason Competition</h4>
-                    <p className="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-2">Half Hollow Hills</p>
-                    <p className="text-[var(--text-secondary)]">Competing with our 2025 robot in a local offseason event.</p>
+                  <div className="flex-1">
+                    <h4 className="font-display font-medium text-[var(--text-primary)] text-2xl mb-1 sm:mb-2">[Competition Pending]</h4>
+                    <p className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-2 sm:mb-3">[Location TBD]</p>
+                    <p className="text-[var(--text-secondary)] leading-relaxed">Details for this upcoming competition will be posted once the official schedule is confirmed.</p>
                   </div>
                 </div>
               </div>
-              <div className="mt-10">
-                <Link to="/events" className="btn-outline">
-                  View Full Calendar <ChevronRight size={18} className="ml-2" />
+              <div className="mt-8">
+                <Link to="/events" className="btn-outline w-full sm:w-auto justify-center text-lg py-4 sm:py-3 cursor-pointer">
+                  View Full Calendar <ChevronRight size={20} className="ml-2" />
                 </Link>
               </div>
             </motion.div>
@@ -247,17 +250,17 @@ export default function Home() {
                 It takes a village to build a robot. We rely on the generous support of corporate sponsors, local businesses, and individual donors to fund our engineering process and student travel.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Link to="/sponsors" className="btn-primary w-full sm:w-auto">
+                <Link to="/sponsors" className="btn-primary w-full sm:w-auto justify-center text-lg py-4 sm:py-3 px-8">
                   Become a Sponsor
                 </Link>
-                <Link to="/donate" className="btn-secondary w-full sm:w-auto">
+                <Link to="/donate" className="btn-outline w-full sm:w-auto justify-center text-lg py-4 sm:py-3 px-8">
                   Make a Donation
                 </Link>
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:w-1/2 w-full">
-              <div className="grid grid-cols-2 gap-8 lg:gap-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 bg-[var(--bg-primary)] p-12 rounded-2xl border border-[var(--border-subtle)] polaroid-shadow">
+              <div className="grid grid-cols-2 gap-8 lg:gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 bg-[var(--bg-primary)] p-12 rounded-2xl border border-[var(--border-subtle)] polaroid-shadow">
                 {/* Placeholder Sponsor Logos */}
                 <div className="flex items-center justify-center text-xl md:text-2xl font-display font-bold text-[var(--text-primary)] text-center">SPONSOR 1</div>
                 <div className="flex items-center justify-center text-xl md:text-2xl font-display font-medium text-[var(--text-primary)] text-center">SPONSOR 2</div>

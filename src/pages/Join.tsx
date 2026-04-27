@@ -6,23 +6,23 @@ import { siteConfig } from '../config/site';
 const faqs = [
   {
     question: "Do I need prior experience to join?",
-    answer: "Not at all! We assume no prior knowledge. Our fall training sessions are designed to teach you everything you need to know, whether you want to learn CAD, programming, machining, or business management."
+    answer: "No experience is required. We teach you everything you need to know! We welcome all students, whether you're interested in CAD, programming, machining, or business management."
+  },
+  {
+    question: "Who can join the team?",
+    answer: "Any Hauppauge High School student who is willing to learn, work hard, and commit to the team's schedule is welcome to join."
   },
   {
     question: "What is the time commitment?",
-    answer: "During the fall (off-season), we typically meet 2-3 times a week after school. During build season (January-March), the commitment increases significantly as we have 6 weeks to build a competitive robot. We meet almost every day after school and on weekends."
+    answer: "During the fall off-season, we meet a few days a week to build skills. During build season (January-March), the commitment increases significantly as we have six weeks to build our competition robot, involving frequent after-school and weekend sessions."
   },
   {
     question: "Is there a cost to join?",
-    answer: "There are nominal dues, but we firmly believe that financial constraints should never prevent a student from participating. We offer fee waivers and payment plans. Travel costs for regional competitions are heavily subsidized by our sponsors."
+    answer: "There are nominal dues, but we firmly believe financial constraints should never prevent a student from participating. We offer fee waivers and payment plans. Travel costs for competitions are subsidized by our sponsors."
   },
   {
-    question: "Can I do other sports/activities and still be on the team?",
-    answer: "Yes! Many of our students balance robotics with other sports, clubs, and rigorous academic schedules. We just ask that you communicate your availability clearly with your subteam leads."
-  },
-  {
-    question: "Are parents expected to be involved?",
-    answer: "While it's a student-led team, parents are crucial to our success! Parent volunteers help arrange team meals during build season, coordinate travel, chaperone events, and sometimes even mentor in their areas of expertise."
+    question: "Can I do other activities and still be on the team?",
+    answer: "Yes! Many of our members balance robotics with sports, other clubs, and rigorous academic schedules. We just ask that you communicate your availability clearly with your subteam leads."
   }
 ];
 
@@ -77,14 +77,15 @@ export default function Join() {
           </span>
           NO EXPERIENCE REQUIRED
         </div>
-        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">Start Your Engineering Journey</h1>
+        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">Build Your Engineering Journey</h1>
         <p className="text-lg text-[var(--text-secondary)]">
-          You don't need to be an expert to join. We teach you everything you need to know. Whether you want to build robots, write code, or run a business, there's a place for you on The Robotic Eagles.
+          You don't need to be an expert to join. Bring your curiosity and willingness to learn, and we'll teach you the rest. Whether you want to machine parts, write Java, design graphics, or manage a budget, there's a place for you on Team 358.
         </p>
         <div className="mt-8">
-          <a href={siteConfig.formLinks.joinInterest} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Apply for the 2026 Season <ArrowRight size={20} className="ml-2" />
-          </a>
+          <button className="btn-primary opacity-80 cursor-not-allowed">
+            Interest Form Coming Soon
+          </button>
+          <p className="mt-4 text-sm text-[var(--text-secondary)]">Check back in the fall for official registration.</p>
         </div>
       </motion.div>
 
@@ -95,34 +96,41 @@ export default function Join() {
           viewport={{ once: true }}
           className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow p-8 md:p-12"
         >
-          <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-8">How to Join</h2>
+          <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-8">How Joining Works</h2>
           <ol className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-[var(--border-subtle)] before:to-transparent">
             <li className="relative flex items-center md:flex-row flex-col gap-6 text-center md:text-left">
               <div className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border-2 border-[var(--accent)] flex items-center justify-center font-bold text-[var(--accent)] shrink-0 z-10 md:mx-0 mx-auto">1</div>
               <div>
-                <h3 className="font-bold text-[var(--text-primary)] text-lg">Attend the Open House</h3>
-                <p className="text-[var(--text-secondary)] text-sm">Come to our fall open house to meet the team and see the shop.</p>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg">Express Interest</h3>
+                <p className="text-[var(--text-secondary)] text-sm">Fill out the online interest form so we can directly send you information regarding upcoming meetings.</p>
               </div>
             </li>
             <li className="relative flex items-center md:flex-row flex-col gap-6 text-center md:text-left">
               <div className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border-2 border-[var(--accent)] flex items-center justify-center font-bold text-[var(--accent)] shrink-0 z-10 md:mx-0 mx-auto">2</div>
               <div>
-                <h3 className="font-bold text-[var(--text-primary)] text-lg">Fill out the Application</h3>
-                <p className="text-[var(--text-secondary)] text-sm">Complete the online interest form so we have your contact info.</p>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg">Attend Open House</h3>
+                <p className="text-[var(--text-secondary)] text-sm">Come to our introductory meeting to tour the shop, see our robots, and meet our members.</p>
               </div>
             </li>
             <li className="relative flex items-center md:flex-row flex-col gap-6 text-center md:text-left">
               <div className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border-2 border-[var(--accent)] flex items-center justify-center font-bold text-[var(--accent)] shrink-0 z-10 md:mx-0 mx-auto">3</div>
               <div>
-                <h3 className="font-bold text-[var(--text-primary)] text-lg">Come to Training Sessions</h3>
-                <p className="text-[var(--text-secondary)] text-sm">Attend our fall training workshops to learn the basics of your chosen subteam.</p>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg">Fall Training Sessions</h3>
+                <p className="text-[var(--text-secondary)] text-sm">Attend our workshops to learn the basics of your chosen subteam and get hands-on experience.</p>
+              </div>
+            </li>
+            <li className="relative flex items-center md:flex-row flex-col gap-6 text-center md:text-left">
+              <div className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border-2 border-[var(--accent)] flex items-center justify-center font-bold text-[var(--accent)] shrink-0 z-10 md:mx-0 mx-auto">4</div>
+              <div>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg">Build Season Starts</h3>
+                <p className="text-[var(--text-secondary)] text-sm">When January hits, we receive the game reveal and start putting all that training to use.</p>
               </div>
             </li>
           </ol>
           <div className="mt-12 text-center">
-            <a href={siteConfig.formLinks.joinInterest} target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center">
-              Fill Out Interest Form <ArrowRight size={20} className="ml-2" />
-            </a>
+            <button className="btn-outline w-full justify-center opacity-50 cursor-not-allowed">
+              Registration Not Yet Open
+            </button>
           </div>
         </motion.div>
 

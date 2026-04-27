@@ -33,7 +33,7 @@ export default function Donate() {
           
           <div className="space-y-6">
             {/* Online Portal */}
-            <div className="p-6 bg-[var(--bg-primary)] border border-dashed border-[var(--border-subtle)] flex items-start gap-4 rounded-xl">
+            <div className="p-6 bg-[var(--bg-primary)] border border-solid border-[var(--border-subtle)] flex items-start gap-4 rounded-xl">
               <div className="text-[var(--accent)] mt-1"><CreditCard size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Online Portal (Coming Soon)</h3>

@@ -11,9 +11,9 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center max-w-3xl mx-auto mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">About The Robotic Eagles</h1>
+        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">About Team 358</h1>
         <p className="text-lg text-[var(--text-secondary)]">
-          We are Hauppauge High School's FIRST Robotics Competition Team 358. We don't just build robots—we build the next generation of engineers, creators, and leaders.
+          We are Hauppauge High School's FIRST Robotics Competition Team 358. We don't just build robots—we build the next generation of engineers, creators, and community leaders.
         </p>
       </motion.div>
 
@@ -26,10 +26,10 @@ export default function About() {
         >
           <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-6">Our Mission</h2>
           <p className="text-[var(--text-secondary)] mb-6 leading-relaxed text-lg">
-            Our mission is to empower Hauppauge students to become science and technology leaders. By exposing them to rigorous mentor-based programs, we build not just structural engineering and coding skills, but the resilience to solve impossible problems.
+            The Robotic Eagles are driven by a singular goal: to empower Hauppauge students to become confident science and technology leaders. We provide a hands-on, mentor-supported environment where students can tackle impossible engineering problems under tight prototyping limits.
           </p>
           <p className="text-[var(--text-secondary)] leading-relaxed text-lg">
-            We are a student-driven organization. We believe that hands-on experience failing, iterating, and succeeding under a 6-week deadline produces well-rounded students equipped with unparalleled self-confidence and communication capabilities.
+            We are a proudly student-driven organization. The experience of designing, failing, iterating, and succeeding together produces well-rounded students equipped with unparalleled problem-solving and communication skills for the modern workforce.
           </p>
         </motion.div>
         <motion.div 
@@ -42,7 +42,7 @@ export default function About() {
             <Zap className="text-white" /> What is FIRST?
           </h3>
           <p className="text-slate-300 leading-relaxed text-lg">
-            FIRST (For Inspiration and Recognition of Science and Technology) is a global nonprofit organization that operates after-school robotics programs for young people. The FIRST Robotics Competition (FRC) challenges high school students to build industrial-size robots to play a difficult field game in alliance with other teams, while also raising funds, designing a team "brand," and advancing respect and appreciation for STEM within the local community.
+            Team 358 competes in the FIRST Robotics Competition (FRC), an international high school robotics league. Each January, FIRST releases a new, complex field game. We have just six weeks to design, CAD, machine, wire, and program an industrial-sized robot to play that game alongside teams from around the world.
           </p>
         </motion.div>
       </div>

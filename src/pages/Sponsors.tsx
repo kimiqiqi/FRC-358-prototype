@@ -11,10 +11,14 @@ export default function Sponsors() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center max-w-3xl mx-auto mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">Our Sponsors</h1>
+        <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">Corporate Partnerships</h1>
         <p className="text-lg text-[var(--text-secondary)]">
-          Building a competitive robot and running a STEM team requires significant resources. We are incredibly grateful to the organizations that make our mission possible.
+          It takes significant resources to build industrial-grade robots and run a technology team. We partner with companies, foundations, and community organizations to make our mission possible.
         </p>
+        <div className="mt-8">
+          <p className="text-sm text-[var(--text-secondary)]">Are you an individual or family looking to help?</p>
+          <Link to="/donate" className="text-[var(--accent)] hover:underline font-bold text-sm">Visit our Donation page</Link>
+        </div>
       </motion.div>
 
       {/* Why Sponsor Us */}
@@ -43,9 +47,9 @@ export default function Sponsors() {
           <div className="w-12 h-12 rounded-full border-2 border-[var(--accent)] bg-[var(--bg-primary)] flex items-center justify-center text-[var(--accent)] mb-6">
             <ShieldCheck size={24} />
           </div>
-          <h3 className="text-2xl font-display font-medium text-[var(--text-primary)] mb-3">Brand Visibility</h3>
+          <h3 className="text-2xl font-display font-medium text-[var(--text-primary)] mb-3">Company Visibility</h3>
           <p className="text-[var(--text-secondary)] text-sm">
-            Sponsors receive logo placement on our robot, team apparel, website, and pit display, reaching thousands at regional events.
+            Sponsors are recognized through prominent logo placement on our competition robot, pit display, team apparel, and digital platforms.
           </p>
         </motion.div>
         <motion.div 
@@ -58,9 +62,9 @@ export default function Sponsors() {
           <div className="w-12 h-12 rounded-full border-2 border-[var(--accent)] bg-[var(--bg-primary)] flex items-center justify-center text-[var(--accent)] mb-6">
             <Users size={24} />
           </div>
-          <h3 className="text-2xl font-display font-medium text-[var(--text-primary)] mb-3">Community Impact</h3>
+          <h3 className="text-2xl font-display font-medium text-[var(--text-primary)] mb-3">Talent Pipeline</h3>
           <p className="text-[var(--text-secondary)] text-sm">
-            Show your company's commitment to STEM education and local youth development through our 501(c)(3) equivalent program.
+            Connect directly with highly motivated, STEM-focused students who will become the next generation of engineers and technologists.
           </p>
         </motion.div>
       </div>

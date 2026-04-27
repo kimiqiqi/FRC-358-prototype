@@ -1,4 +1,4 @@
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import { siteConfig } from '../config/site';
 
@@ -47,7 +47,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold mb-1">Location</h3>
-                  <p className="text-[var(--text-secondary)] mb-2">Our shop is located at:</p>
+                  <p className="text-[var(--text-secondary)] mb-2">We are located at:</p>
                   <address className="not-italic text-[var(--text-primary)] font-medium whitespace-pre-line">
                     {siteConfig.schoolName}{'\n'}
                     {siteConfig.schoolAddress.split(', ').join('\n')}
@@ -58,46 +58,25 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Contact Form Placeholder */}
+        {/* Location Map */}
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow p-8"
+          className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow p-2 relative min-h-[400px] flex flex-col"
         >
-          <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-6">Send a Message</h2>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-[var(--text-secondary)] mb-1">First Name</label>
-                <input type="text" id="firstName" className="w-full bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl px-4 py-3 focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors" placeholder="Jane" />
-              </div>
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-[var(--text-secondary)] mb-1">Last Name</label>
-                <input type="text" id="lastName" className="w-full bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl px-4 py-3 focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors" placeholder="Doe" />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-[var(--text-secondary)] mb-1">Email Address</label>
-              <input type="email" id="email" className="w-full bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl px-4 py-3 focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors" placeholder="jane@example.com" />
-            </div>
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-[var(--text-secondary)] mb-1">Subject</label>
-              <select id="subject" className="w-full bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl px-4 py-3 focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors text-[var(--text-primary)]">
-                <option>General Inquiry</option>
-                <option>Joining the Team</option>
-                <option>Sponsorship</option>
-                <option>Mentorship</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-[var(--text-secondary)] mb-1">Message</label>
-              <textarea id="message" rows={4} className="w-full bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl px-4 py-3 focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-colors resize-none" placeholder="How can we help you?"></textarea>
-            </div>
-            <button type="button" className="btn-primary w-full mt-4 justify-center">
-              Send Message <Send size={18} className="ml-2" />
-            </button>
-          </form>
+          <div className="absolute inset-0 p-2">
+            <iframe 
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(siteConfig.schoolName + " " + siteConfig.schoolAddress)}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full rounded-xl"
+            ></iframe>
+          </div>
         </motion.div>
       </div>
     </div>
