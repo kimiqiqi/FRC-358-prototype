@@ -6,13 +6,15 @@ export const siteConfig = {
   
   // Future Student Editor: Update the email below when you get an official team email
   contactEmail: "contact@team358.org", 
-  foundedYear: "1999",
+  foundedYear: "1999 (Year TBC)",
   
   // Future Student Editor: Add Google Forms or external links below
   formLinks: {
     joinInterest: "https://forms.google.com/your-form-here",
     donationPortal: "https://your-school-donation-portal.example.com",
-    calendarEmbed: "https://calendar.google.com/calendar/embed?src=example%40group.calendar.google.com",
+    calendarEmbedUrl: "https://calendar.google.com/calendar/embed?src=example%40group.calendar.google.com",
+    calendarPublicUrl: "https://calendar.google.com/calendar/r?cid=example%40group.calendar.google.com",
+    calendarSubscribeUrl: "https://calendar.google.com/calendar/ical/example%40group.calendar.google.com/public/basic.ics",
   },
   
   // Status Flags to toggle UI sections when they are ready

@@ -26,9 +26,9 @@ export default function Outreach() {
             <div className="w-14 h-14 rounded-full border-2 border-[var(--accent)] bg-[var(--bg-primary)] flex items-center justify-center text-[var(--accent)] mb-6">
               <BookOpen size={28} />
             </div>
-            <h2 className="text-3xl font-display font-medium mb-4 text-[var(--text-primary)]">Mentoring Local Teams</h2>
+            <h2 className="text-3xl font-display font-medium mb-4 text-[var(--text-primary)]">Mentoring Local Students</h2>
             <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-              Our high school students actively mentor FIRST LEGO League (FLL) teams at our local middle and elementary schools. We help younger students learn basic programming, mechanical design, and teamwork skills, preparing them for a future in STEM.
+              We aspire to mentor younger students from our local middle and elementary schools. We want to help them learn basic programming, mechanical design, and teamwork skills, preparing them for a future in STEM.
             </p>
           </div>
           <div className="order-1 md:order-2 aspect-video md:aspect-auto md:h-full bg-[var(--bg-primary)] border-b md:border-b-0 md:border-l border-[var(--border-subtle)] flex items-center justify-center relative">
@@ -70,7 +70,7 @@ export default function Outreach() {
             </div>
             <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-4">STEM Advocacy</h2>
             <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-              We advocate for increased access to STEM education by speaking with local representatives and school board members. We believe every student should have the opportunity to participate in hands-on robotics programs regardless of their background.
+              We aim to advocate for increased access to STEM education within our community. We believe every student should have the opportunity to participate in hands-on robotics programs regardless of their background.
             </p>
           </div>
           <div className="order-1 md:order-2 aspect-video md:aspect-auto md:h-full bg-[var(--bg-primary)] border-b md:border-b-0 md:border-l border-[var(--border-subtle)] flex items-center justify-center relative">

@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "Is there a cost to join?",
-    answer: "There are nominal dues, but we firmly believe financial constraints should never prevent a student from participating. We offer fee waivers and payment plans. Travel costs for competitions are subsidized by our sponsors."
+    answer: "There may be nominal dues, but we firmly believe financial constraints should never prevent a student from participating. We aim to help make the program accessible for everyone."
   },
   {
     question: "Can I do other activities and still be on the team?",
@@ -88,7 +88,7 @@ export default function Join() {
             </a>
           ) : (
             <>
-              <button className="btn-primary opacity-80 cursor-not-allowed">
+              <button disabled className="btn-primary opacity-80 cursor-not-allowed" aria-disabled="true">
                 Interest Form Coming Soon
               </button>
               <p className="mt-4 text-sm text-[var(--text-secondary)]">Check back in the fall for official registration.</p>
@@ -141,7 +141,7 @@ export default function Join() {
                 Fill Out Interest Form <ArrowRight size={20} className="ml-2" />
               </a>
             ) : (
-              <button className="btn-outline w-full justify-center opacity-50 cursor-not-allowed">
+              <button disabled className="btn-outline w-full justify-center opacity-50 cursor-not-allowed" aria-disabled="true">
                 Registration Not Yet Open
               </button>
             )}

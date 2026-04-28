@@ -93,19 +93,19 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 text-center divide-x-0 md:divide-x divide-[var(--border-subtle)]">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">25+</p>
-              <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Years Active</p>
+              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">Est.</p>
+              <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Since 1999</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">50+</p>
+              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">Many</p>
               <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Active Students</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">15</p>
-              <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Mentors</p>
+              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">Our</p>
+              <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Dedicated Mentors</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">100%</p>
+              <p className="text-4xl font-display font-medium text-[var(--accent)] mb-2">Proudly</p>
               <p className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-widest">Student Led</p>
             </motion.div>
           </div>

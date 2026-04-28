@@ -31,12 +31,12 @@ export default function Events() {
             </div>
             {/* Future Add to Calendar Hook */}
             {siteConfig.features.isCalendarActive ? (
-              <a href={siteConfig.formLinks.calendarEmbed} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">
+              <a href={siteConfig.formLinks.calendarSubscribeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">
                 <ExternalLink size={16} />
                 Subscribe to Calendar
               </a>
             ) : (
-              <button disabled className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] opacity-50 cursor-not-allowed">
+              <button disabled className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] opacity-50 cursor-not-allowed" aria-disabled="true">
                 <ExternalLink size={16} />
                 Calendar Pending
               </button>
@@ -46,7 +46,8 @@ export default function Events() {
           <div className="aspect-square md:aspect-[4/3] w-full bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl flex items-center justify-center relative overflow-hidden">
             {siteConfig.features.isCalendarActive ? (
               <iframe 
-                src={siteConfig.formLinks.calendarEmbed} 
+                src={siteConfig.formLinks.calendarEmbedUrl} 
+                title="Team 358 Interactive Calendar"
                 className="w-full h-full border-0 rounded-xl bg-white" 
                 loading="lazy"
               ></iframe>
@@ -99,7 +100,7 @@ export default function Events() {
             </div>
             
             {siteConfig.features.isCalendarActive ? null : (
-              <button className="btn-outline w-full mt-8 justify-center opacity-50 cursor-not-allowed" disabled>
+              <button className="btn-outline w-full mt-8 justify-center opacity-50 cursor-not-allowed" disabled aria-disabled="true">
                 Schedule Not Yet Available
               </button>
             )}

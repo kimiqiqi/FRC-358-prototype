@@ -68,6 +68,7 @@ export default function Contact() {
           <div className="absolute inset-0 p-2">
             <iframe 
               src={`https://maps.google.com/maps?q=${encodeURIComponent(siteConfig.schoolName + " " + siteConfig.schoolAddress)}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
+              title={`${siteConfig.schoolName} Map Location`}
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

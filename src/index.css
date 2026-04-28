@@ -78,6 +78,12 @@
   .tech-shadow-lg {
     box-shadow: 0 10px 30px -5px var(--shadow-color);
   }
+  .polaroid-shadow {
+    box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -4px var(--shadow-color);
+  }
+  .polaroid-shadow-sm {
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
+  }
   .section-pad {
     @apply py-16 md:py-24 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
   }

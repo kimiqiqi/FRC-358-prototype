@@ -43,7 +43,7 @@ export default function Donate() {
                     Donate Online
                   </a>
                 ) : (
-                  <button disabled className="btn-primary opacity-50 cursor-not-allowed">
+                  <button disabled className="btn-primary opacity-50 cursor-not-allowed" aria-disabled="true">
                     Portal Unavailable (Coming Soon)
                   </button>
                 )}
@@ -91,7 +91,7 @@ export default function Donate() {
               <div className="shrink-0 text-[var(--accent)] mt-1"><Plane size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Registration & Travel</h3>
-                <p className="text-sm text-[var(--text-secondary)]">FIRST event registration fees ($6,000+ per bare minimum season) and transportation for our students.</p>
+                <p className="text-sm text-[var(--text-secondary)]">Substantial FIRST event registration fees and transportation costs to ensure our students can compete on a regional stage.</p>
               </div>
             </div>
           </div>

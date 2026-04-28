@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Robotic Eagles 358 - Official Website
 
-# Run and deploy your AI Studio app
+This is the official website for Hauppauge High School's FIRST Robotics Competition Team 358, the Robotic Eagles. This website provides information about our team, upcoming events, how to join, and ways to sponsor or donate.
 
-This contains everything you need to run your app locally.
+## Project Structure
 
-View your app in AI Studio: https://ai.studio/apps/005808ab-8440-4d7f-a318-c89aa7763564
+This is a modern front-end application built with React, Vite, and Tailwind CSS.
 
-## Run Locally
+- `src/pages`: Contains all the page components (`Home`, `About`, `Events`, `Join`, `Donate`, `Sponsors`, etc.).
+- `src/components`: Contains reusable UI components like `Navigation` and `Footer`.
+- `src/config/site.ts`: Central configuration file for managing links, dummy data status flags, and team details.
+- `src/data/`: Data arrays for things like History, Sponsors, and Events to easily update them without touching complex UI code.
+- `src/index.css`: Tailwind entry point and global design tokens.
 
-**Prerequisites:**  Node.js
+## How to Edit
 
+### Basic Content Updates
+1. **Config & Links:** To change email, year, social links, or toggle sections like "Donations" / "Join Form" off/on, edit `src/config/site.ts`.
+2. **Calendar Events:** To add upcoming featured events to the Events page sidebar, edit `src/data/events.ts`.
+3. **Sponsor Logos:** To update sponsor names or logos, edit `src/data/sponsors.ts`.
+4. **Team History:** To add a new milestone to the About page timeline, edit `src/data/history.ts`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Pages
+Navigate to `src/pages/` to update specific paragraphs or sections of content for each route.
+
+## Setup Instructions
+
+If developing locally:
+
+1. \`npm install\`
+2. \`npm run dev\`
+
+## Deployment
+
+To deploy in AI Studio or other platforms, you can build the site with:
+\`npm run build\`
+
+The resulting static files will be placed in the `dist` folder.
