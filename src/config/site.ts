@@ -3,14 +3,28 @@ export const siteConfig = {
   teamNumber: "358",
   schoolName: "Hauppauge High School",
   schoolAddress: "500 Lincoln Blvd, Hauppauge, NY 11788",
-  contactEmail: "contact@team358.org", // TODO: Update to real email
-  foundedYear: "1999", // TODO: Update to real year
+  
+  // Future Student Editor: Update the email below when you get an official team email
+  contactEmail: "contact@team358.org", 
+  foundedYear: "1999",
+  
+  // Future Student Editor: Add Google Forms or external links below
   formLinks: {
-    joinInterest: "https://forms.google.com/your-form-here", // TODO: Update to real forms
+    joinInterest: "https://forms.google.com/your-form-here",
+    donationPortal: "https://your-school-donation-portal.example.com",
+    calendarEmbed: "https://calendar.google.com/calendar/embed?src=example%40group.calendar.google.com",
   },
+  
+  // Status Flags to toggle UI sections when they are ready
+  features: {
+    isJoinFormOpen: false, // Change to true when registration is open
+    isDonationPortalActive: false, // Change to true when school approves checkout
+    isCalendarActive: false, // Change to true when calendar embed links are valid
+  },
+  
   socials: {
-    instagram: "https://instagram.com/team358", // TODO
-    youtube: "https://youtube.com/team358",     // TODO
-    github: "https://github.com/team358",       // TODO
+    instagram: "https://instagram.com/team358",
+    youtube: "https://youtube.com/team358",
+    github: "https://github.com/team358",
   }
 };

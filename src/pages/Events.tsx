@@ -1,5 +1,7 @@
 import { Calendar as CalendarIcon, MapPin, Clock, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
+import { siteConfig } from '../config/site';
+import { upcomingEvents } from '../data/events';
 
 export default function Events() {
   return (
@@ -28,28 +30,44 @@ export default function Events() {
               <h2 className="text-2xl font-display font-medium text-[var(--text-primary)]">Interactive Schedule</h2>
             </div>
             {/* Future Add to Calendar Hook */}
-            <button className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">
-              <ExternalLink size={16} />
-              Subscribe to Calendar
-            </button>
+            {siteConfig.features.isCalendarActive ? (
+              <a href={siteConfig.formLinks.calendarEmbed} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">
+                <ExternalLink size={16} />
+                Subscribe to Calendar
+              </a>
+            ) : (
+              <button disabled className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] opacity-50 cursor-not-allowed">
+                <ExternalLink size={16} />
+                Calendar Pending
+              </button>
+            )}
           </div>
           
-          {/* Google Calendar Embed Placeholder */}
           <div className="aspect-square md:aspect-[4/3] w-full bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl flex items-center justify-center relative overflow-hidden">
-            <div className="text-center p-8 z-10 bg-[var(--bg-primary)]/90 backdrop-blur-sm border border-[var(--border-subtle)] rounded-xl polaroid-shadow-sm max-w-md mx-4">
-              <CalendarIcon className="w-12 h-12 text-[var(--text-secondary)] mx-auto mb-4 opacity-50" />
-              <p className="font-mono text-xs text-[var(--accent)] uppercase tracking-widest mb-2">Google Calendar Integration</p>
-              <p className="font-display font-medium text-2xl text-[var(--text-primary)] mb-4">Official Schedule Pending</p>
-              <p className="text-sm text-[var(--text-secondary)] mb-6">
-                The team's live Google Calendar will be embedded here. Right now, dates are being confirmed. Check back soon for meeting times and competition schedules.
-              </p>
-            </div>
-            {/* Abstract calendar grid background (visual structure for placeholder) */}
-            <div className="absolute inset-0 grid grid-cols-7 grid-rows-5 gap-px bg-[var(--border-subtle)] opacity-30">
-              {Array.from({ length: 35 }).map((_, i) => (
-                <div key={i} className="bg-[var(--bg-secondary)]"></div>
-              ))}
-            </div>
+            {siteConfig.features.isCalendarActive ? (
+              <iframe 
+                src={siteConfig.formLinks.calendarEmbed} 
+                className="w-full h-full border-0 rounded-xl bg-white" 
+                loading="lazy"
+              ></iframe>
+            ) : (
+              <>
+                <div className="text-center p-8 z-10 bg-[var(--bg-primary)]/90 backdrop-blur-sm border border-[var(--border-subtle)] rounded-xl polaroid-shadow-sm max-w-md mx-4">
+                  <CalendarIcon className="w-12 h-12 text-[var(--text-secondary)] mx-auto mb-4 opacity-50" />
+                  <p className="font-mono text-xs text-[var(--accent)] uppercase tracking-widest mb-2">Google Calendar Integration</p>
+                  <p className="font-display font-medium text-2xl text-[var(--text-primary)] mb-4">Official Schedule Pending</p>
+                  <p className="text-sm text-[var(--text-secondary)] mb-6">
+                    The team's live Google Calendar will be embedded here. Right now, dates are being confirmed. Check back soon for meeting times and competition schedules.
+                  </p>
+                </div>
+                {/* Abstract calendar grid background (visual structure for placeholder) */}
+                <div className="absolute inset-0 grid grid-cols-7 grid-rows-5 gap-px bg-[var(--border-subtle)] opacity-30">
+                  {Array.from({ length: 35 }).map((_, i) => (
+                    <div key={i} className="bg-[var(--bg-secondary)]"></div>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </motion.div>
 
@@ -64,38 +82,27 @@ export default function Events() {
             <h3 className="font-display font-medium text-2xl text-[var(--text-primary)] mb-6 border-b border-[var(--border-subtle)] pb-4">Upcoming Key Dates</h3>
             
             <div className="space-y-6">
-              {/* Event Placeholder 1 */}
-              <div className="group cursor-default">
-                <p className="text-[var(--accent)] font-bold text-xs mb-1 uppercase tracking-wider">Date TBD</p>
-                <h4 className="font-bold text-[var(--text-primary)] text-lg mb-2">[Event Name Placeholder]</h4>
-                <div className="flex items-start gap-2 text-[var(--text-secondary)] text-sm mb-1">
-                  <MapPin size={16} className="mt-0.5 shrink-0 opacity-70" />
-                  <span>[Location TBD]</span>
+              {upcomingEvents.map((event) => (
+                <div key={event.id} className="group cursor-default">
+                  <p className="text-[var(--accent)] font-bold text-xs mb-1 uppercase tracking-wider">{event.date}</p>
+                  <h4 className="font-bold text-[var(--text-primary)] text-lg mb-2">{event.title}</h4>
+                  <div className="flex items-start gap-2 text-[var(--text-secondary)] text-sm mb-1">
+                    <MapPin size={16} className="mt-0.5 shrink-0 opacity-70" />
+                    <span>{event.location}</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[var(--text-secondary)] text-sm">
+                    <Clock size={16} className="mt-0.5 shrink-0 opacity-70" />
+                    <span>{event.time}</span>
+                  </div>
                 </div>
-                <div className="flex items-start gap-2 text-[var(--text-secondary)] text-sm">
-                  <Clock size={16} className="mt-0.5 shrink-0 opacity-70" />
-                  <span>[Time TBD]</span>
-                </div>
-              </div>
-
-              {/* Event Placeholder 2 */}
-              <div className="group cursor-default">
-                <p className="text-[var(--accent)] font-bold text-xs mb-1 uppercase tracking-wider">Date TBD</p>
-                <h4 className="font-bold text-[var(--text-primary)] text-lg mb-2">[Competition Name]</h4>
-                <div className="flex items-start gap-2 text-[var(--text-secondary)] text-sm mb-1">
-                  <MapPin size={16} className="mt-0.5 shrink-0 opacity-70" />
-                  <span>[Location TBD]</span>
-                </div>
-                <div className="flex items-start gap-2 text-[var(--text-secondary)] text-sm">
-                  <Clock size={16} className="mt-0.5 shrink-0 opacity-70" />
-                  <span>[Time TBD]</span>
-                </div>
-              </div>
+              ))}
             </div>
             
-            <button className="btn-outline w-full mt-8 justify-center opacity-50 cursor-not-allowed" disabled>
-              Schedule Not Yet Available
-            </button>
+            {siteConfig.features.isCalendarActive ? null : (
+              <button className="btn-outline w-full mt-8 justify-center opacity-50 cursor-not-allowed" disabled>
+                Schedule Not Yet Available
+              </button>
+            )}
           </div>
         </motion.div>
       </div>

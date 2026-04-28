@@ -82,10 +82,18 @@ export default function Join() {
           You don't need to be an expert to join. Bring your curiosity and willingness to learn, and we'll teach you the rest. Whether you want to machine parts, write Java, design graphics, or manage a budget, there's a place for you on Team 358.
         </p>
         <div className="mt-8">
-          <button className="btn-primary opacity-80 cursor-not-allowed">
-            Interest Form Coming Soon
-          </button>
-          <p className="mt-4 text-sm text-[var(--text-secondary)]">Check back in the fall for official registration.</p>
+          {siteConfig.features.isJoinFormOpen ? (
+            <a href={siteConfig.formLinks.joinInterest} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Apply for the Season <ArrowRight size={20} className="ml-2" />
+            </a>
+          ) : (
+            <>
+              <button className="btn-primary opacity-80 cursor-not-allowed">
+                Interest Form Coming Soon
+              </button>
+              <p className="mt-4 text-sm text-[var(--text-secondary)]">Check back in the fall for official registration.</p>
+            </>
+          )}
         </div>
       </motion.div>
 
@@ -109,7 +117,7 @@ export default function Join() {
               <div className="w-10 h-10 rounded-full bg-[var(--bg-primary)] border-2 border-[var(--accent)] flex items-center justify-center font-bold text-[var(--accent)] shrink-0 z-10 md:mx-0 mx-auto">2</div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg">Attend Open House</h3>
-                <p className="text-[var(--text-secondary)] text-sm">Come to our introductory meeting to tour the shop, see our robots, and meet our members.</p>
+                <p className="text-[var(--text-secondary)] text-sm">Come to our introductory meeting to tour our facilities, see our robots, and meet our members.</p>
               </div>
             </li>
             <li className="relative flex items-center md:flex-row flex-col gap-6 text-center md:text-left">
@@ -128,9 +136,15 @@ export default function Join() {
             </li>
           </ol>
           <div className="mt-12 text-center">
-            <button className="btn-outline w-full justify-center opacity-50 cursor-not-allowed">
-              Registration Not Yet Open
-            </button>
+            {siteConfig.features.isJoinFormOpen ? (
+              <a href={siteConfig.formLinks.joinInterest} target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center">
+                Fill Out Interest Form <ArrowRight size={20} className="ml-2" />
+              </a>
+            ) : (
+              <button className="btn-outline w-full justify-center opacity-50 cursor-not-allowed">
+                Registration Not Yet Open
+              </button>
+            )}
           </div>
         </motion.div>
 

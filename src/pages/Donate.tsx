@@ -28,7 +28,7 @@ export default function Donate() {
         >
           <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-6">Make a Financial Contribution</h2>
           <p className="text-[var(--text-secondary)] mb-8">
-            We accept support through check or via our upcoming secure online portal. All donations go directly to the Hauppauge Robotics team account.
+            We accept support through check or via our secure online portal. All donations go directly to the {siteConfig.schoolName} Robotics team account.
           </p>
           
           <div className="space-y-6">
@@ -36,11 +36,17 @@ export default function Donate() {
             <div className="p-6 bg-[var(--bg-primary)] border border-solid border-[var(--border-subtle)] flex items-start gap-4 rounded-xl">
               <div className="text-[var(--accent)] mt-1"><CreditCard size={24} /></div>
               <div>
-                <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Online Portal (Coming Soon)</h3>
-                <p className="text-sm text-[var(--text-secondary)] mb-4">We are finalizing our school's approved digital checkout process.</p>
-                <button disabled className="btn-primary opacity-50 cursor-not-allowed">
-                  Portal Unavailable
-                </button>
+                <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Online Portal</h3>
+                <p className="text-sm text-[var(--text-secondary)] mb-4">Secure credit card checkout via our official school store.</p>
+                {siteConfig.features.isDonationPortalActive ? (
+                  <a href={siteConfig.formLinks.donationPortal} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                    Donate Online
+                  </a>
+                ) : (
+                  <button disabled className="btn-primary opacity-50 cursor-not-allowed">
+                    Portal Unavailable (Coming Soon)
+                  </button>
+                )}
               </div>
             </div>
 

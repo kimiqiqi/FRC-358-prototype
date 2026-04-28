@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, TrendingUp, Users } from 'lucide-react';
 import { motion } from 'motion/react';
 import { siteConfig } from '../config/site';
+import { sponsorTiers } from '../data/sponsors';
 
 export default function Sponsors() {
   return (
@@ -69,7 +70,7 @@ export default function Sponsors() {
         </motion.div>
       </div>
 
-      {/* Current Sponsors Placeholder */}
+      {/* Current Sponsors Section */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -79,34 +80,27 @@ export default function Sponsors() {
         <h2 className="text-3xl font-display font-medium text-center text-[var(--text-primary)] mb-12">2026 Season Sponsors</h2>
         
         <div className="space-y-16">
-          {/* Platinum Level */}
-          <div>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px bg-[var(--border-subtle)] flex-1"></div>
-              <h3 className="text-sm font-bold text-[var(--text-primary)] uppercase tracking-[0.2em]">Platinum Level</h3>
-              <div className="h-px bg-[var(--border-subtle)] flex-1"></div>
+          {sponsorTiers.map((tier, idx) => (
+            <div key={idx}>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px bg-[var(--border-subtle)] flex-1"></div>
+                <h3 className="text-sm font-bold text-[var(--text-primary)] uppercase tracking-[0.2em]">{tier.levelName}</h3>
+                <div className="h-px bg-[var(--border-subtle)] flex-1"></div>
+              </div>
+              
+              <div className={`grid gap-6 mx-auto ${idx === 0 ? 'grid-cols-1 md:grid-cols-2 max-w-4xl' : 'grid-cols-2 md:grid-cols-3 max-w-5xl'}`}>
+                {tier.sponsors.map((sponsor, sIdx) => (
+                  <div key={sIdx} className={`bg-[var(--bg-primary)] rounded-xl border border-[var(--border-subtle)] flex items-center justify-center overflow-hidden hover:border-[var(--accent)] transition-colors ${idx === 0 ? 'h-40' : 'h-32'}`}>
+                    {sponsor.logoUrl ? (
+                      <img src={sponsor.logoUrl} alt={sponsor.name} className="max-w-[80%] max-h-[80%] object-contain" />
+                    ) : (
+                      <span className={`text-[var(--text-primary)] font-display uppercase tracking-widest text-center px-4 ${idx === 0 ? 'text-2xl' : 'text-xl font-medium'}`}>{sponsor.name}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-            
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="h-40 bg-[var(--bg-primary)] rounded-xl border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-primary)] font-display text-2xl tracking-widest uppercase hover:border-[var(--accent)] transition-colors">SPONSOR 1</div>
-              <div className="h-40 bg-[var(--bg-primary)] rounded-xl border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-primary)] font-display text-2xl tracking-widest uppercase hover:border-[var(--accent)] transition-colors">SPONSOR 2</div>
-            </div>
-          </div>
-
-          {/* Gold Level */}
-          <div>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px bg-[var(--border-subtle)] flex-1"></div>
-              <h3 className="text-sm font-bold text-[var(--text-primary)] uppercase tracking-[0.2em]">Gold Level</h3>
-              <div className="h-px bg-[var(--border-subtle)] flex-1"></div>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="h-32 bg-[var(--bg-primary)] rounded-xl border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-primary)] font-display font-medium text-xl tracking-wider uppercase hover:border-[var(--accent)] transition-colors">LOGO</div>
-              <div className="h-32 bg-[var(--bg-primary)] rounded-xl border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-primary)] font-display font-medium text-xl tracking-wider uppercase hover:border-[var(--accent)] transition-colors">LOGO</div>
-              <div className="h-32 bg-[var(--bg-primary)] rounded-xl border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-primary)] font-display font-medium text-xl tracking-wider uppercase hover:border-[var(--accent)] transition-colors">LOGO</div>
-            </div>
-          </div>
+          ))}
         </div>
       </motion.div>
 

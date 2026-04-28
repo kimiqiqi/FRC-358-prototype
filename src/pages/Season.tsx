@@ -28,7 +28,7 @@ export default function Season() {
         </div>
         <h2 className="text-3xl font-display font-medium mb-4">Awaiting Kickoff</h2>
         <p className="text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">
-          The new game will be revealed in early January 2026. Until then, we are training new members, organizing our shop, and participating in offseason events.
+          The new game will be revealed in early January 2026. Until then, we are training new members, organizing our workspace, and participating in offseason events.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
