@@ -6,15 +6,17 @@ export const upcomingEvents = [
   {
     id: "1",
     date: "Date TBD",
-    title: "[Event Name Placeholder]",
+    title: "[Event Name Pending]",
     location: "[Location TBD]",
-    time: "[Time TBD]"
+    time: "[Time TBD]",
+    description: "Details for this upcoming team event will be posted once the official schedule is confirmed."
   },
   {
     id: "2",
     date: "Date TBD",
-    title: "[Competition Name]",
+    title: "[Competition Pending]",
     location: "[Location TBD]",
-    time: "[Time TBD]"
+    time: "[Time TBD]",
+    description: "Details for this upcoming competition will be posted once the official schedule is confirmed."
   }
 ];

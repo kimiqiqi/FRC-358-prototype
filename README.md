@@ -27,12 +27,13 @@ Navigate to `src/pages/` to update specific paragraphs or sections of content fo
 
 If developing locally:
 
-1. \`npm install\`
-2. \`npm run dev\`
+1. `npm install`
+2. `npm run dev`
 
 ## Deployment
 
 To deploy in AI Studio or other platforms, you can build the site with:
-\`npm run build\`
+`npm run build`
 
-The resulting static files will be placed in the `dist` folder.
+> **Pre-Launch Checklist:**
+> Before the final launch, future editors must update real photos to replace Unsplash stock images, configure real Google Calendar links, replace the active donation portal links if applicable, and upload actual sponsor logos.

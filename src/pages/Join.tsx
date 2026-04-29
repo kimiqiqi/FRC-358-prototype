@@ -155,34 +155,34 @@ export default function Join() {
         >
           <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-8">Find Your Role</h2>
           <div className="space-y-4">
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
+            <motion.div whileHover={{ scale: 1.02, x: 5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Wrench size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Mechanical & CAD</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Design robot parts using SolidWorks, operate CNC machines, and assemble the final robot.</p>
               </div>
-            </div>
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02, x: 5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Code size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Software & Electrical</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Write Java code for robot control, implement computer vision, and wire the electrical board.</p>
               </div>
-            </div>
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02, x: 5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Megaphone size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Business & Strategy</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Manage team finances, write business plans, pitch to sponsors, and analyze match data.</p>
               </div>
-            </div>
-            <div className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] transition-colors">
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02, x: 5 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} className="flex gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-2xl polaroid-shadow hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300">
               <div className="shrink-0 text-[var(--accent)] mt-1"><Camera size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Media & Marketing</h3>
                 <p className="text-sm text-[var(--text-secondary)]">Take photos/videos, manage social media, design team apparel, and maintain the website.</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

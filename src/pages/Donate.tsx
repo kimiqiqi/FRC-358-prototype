@@ -28,7 +28,7 @@ export default function Donate() {
         >
           <h2 className="text-3xl font-display font-medium text-[var(--text-primary)] mb-6">Make a Financial Contribution</h2>
           <p className="text-[var(--text-secondary)] mb-8">
-            We accept support through check or via our secure online portal. All donations go directly to the {siteConfig.schoolName} Robotics team account.
+            We accept support through check or via our secure online portal. Support may help with robot parts, tools, competition expenses, outreach, and student access. Donation processing will follow the school-approved process once finalized.
           </p>
           
           <div className="space-y-6">
@@ -55,12 +55,7 @@ export default function Donate() {
               <div className="text-[var(--accent)] mt-1"><Mail size={24} /></div>
               <div>
                 <h3 className="font-bold text-[var(--text-primary)] text-lg mb-1">Mail a Check</h3>
-                <p className="text-sm text-[var(--text-secondary)] mb-4">Please make checks payable to <strong>{siteConfig.schoolName} Robotics</strong> and mail them to:</p>
-                <div className="bg-[var(--bg-secondary)] p-4 rounded font-mono text-sm text-[var(--text-primary)] border border-[var(--border-subtle)] whitespace-pre-line">
-                  {siteConfig.schoolName}{'\n'}
-                  Attn: Robotics Team {siteConfig.teamNumber}{'\n'}
-                  {siteConfig.schoolAddress.split(', ').join('\n')}
-                </div>
+                <p className="text-sm text-[var(--text-secondary)] mb-4">Check mailing instructions will be provided once confirmed by our school administration.</p>
               </div>
             </div>
           </div>

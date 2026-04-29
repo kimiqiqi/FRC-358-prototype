@@ -50,7 +50,7 @@ export default function Sponsors() {
           </div>
           <h3 className="text-2xl font-display font-medium text-[var(--text-primary)] mb-3">Company Visibility</h3>
           <p className="text-[var(--text-secondary)] text-sm">
-            Sponsors are recognized through prominent logo placement on our competition robot, pit display, team apparel, and digital platforms.
+            Recognition opportunities may include website placement, event signage, team materials, and other school-approved options.
           </p>
         </motion.div>
         <motion.div 
@@ -77,7 +77,10 @@ export default function Sponsors() {
         viewport={{ once: true }}
         className="mb-24 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-subtle)] p-8 md:p-12 polaroid-shadow"
       >
-        <h2 className="text-3xl font-display font-medium text-center text-[var(--text-primary)] mb-12">2026 Season Sponsors</h2>
+        <h2 className="text-3xl font-display font-medium text-center text-[var(--text-primary)] mb-4">2026 Season Sponsors</h2>
+        <p className="text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-12">
+          Sponsor tier examples are shown for layout planning and can be updated once approved.
+        </p>
         
         <div className="space-y-16">
           {sponsorTiers.map((tier, idx) => (
