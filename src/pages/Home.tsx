@@ -35,6 +35,15 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="lg:col-span-5 max-w-2xl relative z-20"
             >
+              
+              {/* Added Memorial Callout */}
+              <Link to="/legacy/sal" className="inline-block mb-6 group">
+                 <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-xs font-medium text-[var(--text-secondary)] shadow-sm hover:border-[var(--accent)] hover:text-[var(--text-primary)] transition-colors">
+                     <span className="w-2 h-2 rounded-full bg-[var(--accent)] opacity-70"></span>
+                     In Memory of Sal — a lasting part of Team 358 <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all" />
+                 </div>
+              </Link>
+              
               <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-display font-medium text-[var(--text-primary)] leading-[1.05] tracking-tight mb-6">
                 Building robots.<br />
                 Writing code.<br />

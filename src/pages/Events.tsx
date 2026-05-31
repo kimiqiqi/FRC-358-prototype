@@ -13,7 +13,7 @@ export default function Events() {
       >
         <h1 className="text-4xl md:text-5xl font-display font-medium text-[var(--text-primary)] mb-6">Team Calendar</h1>
         <p className="text-lg text-[var(--text-secondary)]">
-          Stay up to date with our meetings, build sessions, outreach events, and competitions. Our official schedule will be integrated below once finalized via Google Calendar.
+          Stay up to date with our meetings, build sessions, outreach events, and competitions. Our official public team schedule is embedded below.
         </p>
       </motion.div>
 
@@ -29,7 +29,7 @@ export default function Events() {
               <CalendarIcon className="text-[var(--accent)]" size={24} />
               <h2 className="text-2xl font-display font-medium text-[var(--text-primary)]">Interactive Schedule</h2>
             </div>
-            {/* Future Add to Calendar Hook */}
+            
             {siteConfig.features.isCalendarActive ? (
               <a href={siteConfig.formLinks.calendarSubscribeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-subtle)] rounded-lg text-sm font-bold text-[var(--text-primary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors">
                 <ExternalLink size={16} />
@@ -52,22 +52,23 @@ export default function Events() {
                 loading="lazy"
               ></iframe>
             ) : (
-              <>
-                <div className="text-center p-8 z-10 bg-[var(--bg-primary)]/90 backdrop-blur-sm border border-[var(--border-subtle)] rounded-xl polaroid-shadow-sm max-w-md mx-4">
-                  <CalendarIcon className="w-12 h-12 text-[var(--text-secondary)] mx-auto mb-4 opacity-50" />
-                  <p className="font-mono text-xs text-[var(--accent)] uppercase tracking-widest mb-2">Google Calendar Integration</p>
-                  <p className="font-display font-medium text-2xl text-[var(--text-primary)] mb-4">Official Schedule Pending</p>
-                  <p className="text-sm text-[var(--text-secondary)] mb-6">
-                    The team's live Google Calendar will be embedded here. Right now, dates are being confirmed. Check back soon for meeting times and competition schedules.
-                  </p>
-                </div>
-                {/* Abstract calendar grid background (visual structure for placeholder) */}
-                <div className="absolute inset-0 grid grid-cols-7 grid-rows-5 gap-px bg-[var(--border-subtle)] opacity-30">
-                  {Array.from({ length: 35 }).map((_, i) => (
-                    <div key={i} className="bg-[var(--bg-secondary)]"></div>
-                  ))}
-                </div>
-              </>
+              <div className="flex flex-col items-center justify-center p-8 text-center h-full w-full z-10 bg-[var(--bg-primary)]/90 backdrop-blur-sm">
+                <CalendarIcon className="w-12 h-12 text-[var(--text-secondary)] mx-auto mb-4 opacity-50" />
+                <p className="font-mono text-xs text-[var(--accent)] uppercase tracking-widest mb-2">Public Calendar Integration</p>
+                <p className="font-display font-medium text-2xl text-[var(--text-primary)] mb-4">Official Schedule Pending</p>
+                <p className="text-sm text-[var(--text-secondary)] max-w-md">
+                  The team's live Google Calendar will be embedded here. Right now, dates are being confirmed. Check back soon for meeting times and competition schedules.
+                </p>
+              </div>
+            )}
+            
+            {/* Abstract calendar grid background (visual structure for placeholder) */}
+            {!siteConfig.features.isCalendarActive && (
+              <div className="absolute inset-0 grid grid-cols-7 grid-rows-5 gap-px bg-[var(--border-subtle)] opacity-30 pointer-events-none">
+                {Array.from({ length: 35 }).map((_, i) => (
+                  <div key={i} className="bg-[var(--bg-secondary)]"></div>
+                ))}
+              </div>
             )}
           </div>
         </motion.div>
