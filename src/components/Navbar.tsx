@@ -35,8 +35,7 @@ export default function Navbar() {
 
   // Initial theme check
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains('dark') || 
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const isDarkMode = localStorage.theme === 'dark';
     
     setIsDark(isDarkMode);
     if (isDarkMode) {

@@ -9,88 +9,65 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* 1. Hero Section */}
-      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-[var(--bg-primary)] pt-20">
-        
-        {/* Organic Background Textures & Swoosh */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-50 overflow-hidden flex items-center justify-center">
-          {/* We emulate the hand-drawn swoosh from the image using SVG */}
-          <svg className="absolute w-[150%] h-[150%] max-w-none text-blue-300 dark:text-blue-900 opacity-30" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-100 450 C 300 100, 600 800, 900 350 C 1200 -100, 1500 500, 1800 200" stroke="currentColor" strokeWidth="60" strokeLinecap="round" strokeDasharray="10 20" className="opacity-0" />
-            <path d="M-200 600 C 200 800, 400 100, 800 250 C 1100 400, 1000 850, 1500 700" stroke="currentColor" strokeWidth="50" strokeLinecap="round" />
-            <path d="M100 200 C 400 -50, 800 600, 1100 300 C 1300 100, 1400 600, 1600 400" stroke="currentColor" strokeWidth="40" strokeLinecap="round" opacity="0.6" />
-          </svg>
+      <section className="relative min-h-[85vh] lg:min-h-[700px] flex items-center overflow-hidden bg-[var(--bg-primary)]">
+        {/* Background Visuals */}
+        <div className="absolute inset-0 z-0 bg-[var(--bg-primary)]">
+          <img 
+            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2400&q=80" 
+            alt="Robotics team working together" 
+            className="w-full h-full object-cover object-[70%_30%] opacity-40 xl:opacity-60 xl:object-[80%_30%] mix-blend-multiply dark:mix-blend-luminosity"
+          />
+          {/* gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/30 to-transparent md:opacity-80"></div>
           
-          {/* Subtle cool washes - light icy blues */}
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/60 dark:bg-blue-900/20 rounded-full filter blur-[120px]"></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-100/70 dark:bg-slate-800/20 rounded-full filter blur-[100px]"></div>
+          {/* Subtle technical grid overlay */}
+          <div className="absolute inset-0 z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djIwaC0ydi0yMGgtMjB2LTJoMjBWMTRoMnYyMGgyMHYyaC0yMHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-[0.03]"></div>
         </div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 flex flex-col">
+          
+          {/* Memorial Banner */}
+          <div className="flex w-full justify-center mb-8 md:mb-12">
+            <Link to="/legacy/sal" className="inline-flex group">
+              <div className="flex items-center gap-3 px-8 py-3.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[16px] md:text-lg font-medium text-[var(--text-primary)] shadow-sm hover:border-[var(--accent)] hover:shadow-md transition-all polaroid-shadow-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]"></span>
+                In Memory of Sal — a lasting part of Team 358
+              </div>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
             
-            {/* Hero Typography & CTA */}
+            {/* Hero Left Content */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-5 max-w-2xl relative z-20"
+              className="lg:col-span-8 xl:col-span-8 max-w-3xl relative z-20 mx-auto lg:mx-0"
             >
               
-              {/* Added Memorial Callout */}
-              <Link to="/legacy/sal" className="inline-block mb-6 group">
-                 <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-xs font-medium text-[var(--text-secondary)] shadow-sm hover:border-[var(--accent)] hover:text-[var(--text-primary)] transition-colors">
-                     <span className="w-2 h-2 rounded-full bg-[var(--accent)] opacity-70"></span>
-                     In Memory of Sal — a lasting part of Team 358 <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all" />
-                 </div>
-              </Link>
-              
-              <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-display font-medium text-[var(--text-primary)] leading-[1.05] tracking-tight mb-6">
-                Building robots.<br />
-                Writing code.<br />
-                Finding community.
+              {/* Headline */}
+              <h1 className="text-[2.5rem] sm:text-[3rem] lg:text-[4rem] xl:text-[4.5rem] font-bold font-display text-[var(--text-primary)] leading-[1.1] mb-6 tracking-tight">
+                BUILD. CODE. <br className="hidden sm:block"/>
+                COMPETE. <span className="text-[var(--accent)]">IMPACT.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-[var(--text-secondary)] mb-10 max-w-lg">
-                We are {siteConfig.schoolName}'s FIRST Robotics Competition Team {siteConfig.teamNumber}.
+              
+              {/* Subheading */}
+              <p className="text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] mb-10 max-w-2xl leading-relaxed font-medium mx-auto lg:mx-0">
+                We are {siteConfig.schoolName}'s FIRST Robotics Competition Team {siteConfig.teamNumber}. We design industrial robots, write competitive software, and build lifelong leaders.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <Link to="/join" className="btn-primary w-full sm:w-auto text-center justify-center text-lg py-4 sm:py-3 px-8">
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-stretch sm:items-center gap-4">
+                <Link to="/join" className="btn-primary w-full justify-center sm:w-auto text-sm uppercase px-8 py-3.5 tracking-wider rounded-full">
                   Join Team {siteConfig.teamNumber}
                 </Link>
-                <Link to="/donate" className="btn-outline w-full sm:w-auto text-center justify-center text-lg py-4 sm:py-3 px-8">
+                <Link to="/donate" className="btn-outline w-full justify-center sm:w-auto text-[var(--text-primary)] text-sm uppercase px-8 py-3.5 tracking-wider rounded-full bg-[var(--bg-secondary)]">
                   Support Our Mission
                 </Link>
               </div>
             </motion.div>
-            
-            {/* Scrapbook / Polaroid Visuals */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="lg:col-span-7 relative h-[500px] lg:h-[700px] hidden md:block w-full flex-shrink-0"
-            >
-              {/* Photo 1 (Left) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-[70%] -translate-y-[45%] w-72 lg:w-96 rotate-[-4deg] z-10 transition-transform duration-500 hover:z-30 hover:rotate-[-1deg] hover:scale-105 polaroid-shadow rounded-xl overflow-hidden border-4 border-white dark:border-gray-800">
-                <div className="bg-white">
-                  <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Students working on robot" className="w-full h-auto object-cover aspect-[4/5] bg-gray-100" />
-                </div>
-              </div>
-
-              {/* Photo 2 (Right) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-[15%] -translate-y-[55%] w-72 lg:w-96 rotate-[4deg] z-20 transition-transform duration-500 hover:z-30 hover:rotate-[1deg] hover:scale-105 polaroid-shadow rounded-xl overflow-hidden border-4 border-white dark:border-gray-800">
-                <div className="bg-white">
-                  <img src="https://images.unsplash.com/photo-1565084888279-aca607fccece?auto=format&fit=crop&w=800&q=80" alt="Robot components" className="w-full h-auto object-cover aspect-[4/5] bg-gray-100" />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          
-          {/* Scroll Down Squiggle */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex justify-center w-full">
-            <svg width="80" height="20" viewBox="0 0 80 20" className="text-[var(--accent)] opacity-30">
-               <path d="M0,10 Q10,20 20,10 T40,10 T60,10 T80,10" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
-            </svg>
           </div>
         </div>
       </section>
